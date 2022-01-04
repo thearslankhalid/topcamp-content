@@ -20,9 +20,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const allPosts = await getAllFilesFrontMatter('blog')
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
-  const prev = allPosts[postIndex + 1] || null
-  const next = allPosts[postIndex - 1] || null
+  const seriesPosts = await getAllFilesFrontMatter(`/blog/${params.slug[0]}`)
+  const postIndex = seriesPosts.findIndex((post) => formatSlug(post.slug) === params.slug[1])
+  const prev = seriesPosts[postIndex + 1] || null
+  const next = seriesPosts[postIndex - 1] || null
+  if (prev) prev.slug = `${params.slug[0]}/${prev.slug}`
+  if (next) next.slug = `${params.slug[0]}/${next.slug}`
   const post = await getFileBySlug('blog', params.slug.join('/'))
   const authorList = post.frontMatter.authors || ['default']
   const authorPromise = authorList.map(async (author) => {
