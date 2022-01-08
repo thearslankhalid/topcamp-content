@@ -1,8 +1,8 @@
 ---
 name: TopCamp
-avatar: /static/images/avatar.png
+avatar: /static/images/avatar.jpg
 occupation: Training quality developers
-company: TopCamp
+company: TopCamp Team
 email: address@yoursite.com
 twitter: https://twitter.com/Twitter
 linkedin: https://www.linkedin.com
