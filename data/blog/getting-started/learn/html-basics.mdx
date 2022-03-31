@@ -1,0 +1,198 @@
+---
+title: Introduction to HTML
+date: '2021-08-02'
+tags: ['getting-started']
+draft: false
+summary: 'In introduction to HTML, you will be adding content on your webpage using different HTML tags. It will give you a quick introduction to HTML tags, attributes and code.'
+layout: PostSimple
+---
+
+# Introduction to HTML
+HTML (Hyper Text Markup Language) is used to add and structure content on a website. Content can be in many forms. It can be an image, a video, a paragraph, a title or an icon. HTML uses different elements to display different forms of content on the website.
+
+## What is HTML?
+HTML is a markup language used to structure the content of the web. It uses elements (`p, h1 - h6, ul, li, img, a`) to show display content in a certain way on a website.
+
+## Anatomy of an HTML element
+If you want to add text like:
+
+```
+Chakor is the national bird of Pakistan.
+```
+
+The HTML code required for regular text like above is:
+
+```html
+<p>Chakor is the national bird of Pakistan.</p>
+```
+
+![Anatomy of HTML Element](/static/images/html-basics-1.png)
+
+*Source: [MDN Web Docs](https://developer.mozilla.org/en-US/)*
+
+The main parts of an HTML element are:
+
+- Opening tag: `<p>`
+- Closing tag: `</p>`
+- Text content: Chakor is the national bird of Pakistan.
+- The Element: The opening tag(`<p>`), the closing tag(`</p>`) and the content, altogether make the element.
+
+Elements can also have attributes that look like:
+
+![Anatomy of HTML Attribute](/static/images/html-basics-2.png)
+
+*Source: [MDN Web Docs](https://developer.mozilla.org/en-US/)*
+
+An attribute contains extra information about the HTML element that you do not want to show to the user. It can be giving a class name like the example above. The class attribute adds a non-unique identifier to the HTML element. It comes in handy to select the element using CSS or Javascript.
+
+An attribute always has the following:
+
+1. A space between it and the element name or the previous attribute.
+2. The attribute name followed by the equal sign (`=`).
+3. The attribute value enclosed in quotation marks (`""`).
+
+An HTML element can also have multiple attributes like:
+
+```html
+<p class='bird-text' title='bird-text'>Chakor is the national bird of Pakistan.</p>
+```
+
+## Anatomy of an HTML document
+Let's take a look at the structure of the HTML document. A basic HTML document will have the following code:
+
+```html
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>My Bird Website (Chakor)</title>
+    </head>
+    <body>
+      
+    </body>
+  </html>
+```
+
+The main parts of HTML document are:
+1. Doctype - `<!DOCTYPE html>`: It is a required preamble. All it does is that it makes sure that your HTML code behaves the right way.
+2. The `html` element is the root element of HTML document. It contains all the content of the page.
+3. The `head` element contains the content that you want to add to your page but it is not the content that users will see. It contains the title tag, the description of the page, your CSS styles and some Javascript scripts.
+4. The `body` element contains the content that you want the users to see on your website.
+
+## Empty elements
+There are HTML elements that do not wrap content like `p`. For example, the `img` element does not wrap around content, therefore does not have a closing tag. It takes the path of the image and embeds it in it's place on the web page:
+
+```html
+<img src="assets/bird.png" alt="Chakor image" />
+```
+
+`img` element has two attributes `src` (to link the file path of the image) and `alt` (to show alternative text if the image is not loaded). The `img` element is self-closing (it does not have a closing tag).
+
+## Nesting elements
+HTML elements can be included in other elements. It is called nesting. For example, if you want to create an ordered list like:
+
+```
+1. First item
+2. Second item
+3. Third item
+```
+
+The HTML code for an ordered list is:
+
+```html
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>
+```
+
+In this example, we have nested `li` elements into `ol` element.
+
+## Adding content to your web page
+Let's put your attention back to the bird webpage. You can now start adding different content into the webpage.
+
+### Adding the image
+First, you will embed the image of your favorite bird in the HTML document. The HTML code for that will look like:
+
+```html
+<img src="assets/bird.png" alt="My bird standing on the land" />
+```
+
+It is important that you give an appropriate `alt` description for your image. It makes your web content more accessible. Visually impaired users use screen readers to read `alt` text.
+
+Try adding an img tag in your bird webpage.
+
+### Adding text
+
+Let's add text to your bird webpage:
+
+#### Adding the heading
+
+After the `img` tag, let's add an heading to the webpage. The heading of the page can be the name of the bird or any text you like:
+
+```html
+<h1>Chakor</h1>
+```
+
+Normally, the top-level heading of a webpage is `h1`. There are six heading HTML elements from `h1` to `h6`.
+
+#### Adding a list
+
+Let's add a list of traits of your favorite bird. In order to add a list like:
+
+```
+Chakor has following traits:
+1. Length: 34-38 cm
+2. Average speed: 20km/h
+3. Average lifespan: 2-5 years in wild
+```
+
+We will use the `p`, `ol` and `li` HTML elements:
+
+```html
+<p>Chakor has following traits:</p>
+<ol>
+  <li>Length: 34-38 cm</li>
+  <li>Average speed: 20km/h</li>
+  <li>Average lifespan: 2-5 years in wild</li>
+</ol>
+```
+
+Try adding a list of characteristics of your favorite bird.
+
+#### Adding paragraph
+
+Let's add some more description about your bird on the web page. For that we can use the `p` element to add more content on the web page:
+
+```html
+<p>The Chukar is a round-shaped bird with a length of 34-38 cm. It has a light brown back & grayish breasts, as well as a buff stomach. It has a white face with such a black gorget on it. Its flanks are striped with rufous, and its legs are bright red.</p>
+
+<p>The chukar is an upland game bird native to Eurasian grasslands that belongs to the pheasant species. This sparrow has a historical range in Asia that extends from Pakistan, Kashmir, & Afghan to southeastern Europe.</p>
+```
+
+Try adding a couple of paragraphs to your bird web page.
+
+#### Adding links
+
+Links are very important - they are the connections points of the web. To add a link, we use an HTML element `<a>`. The anchor HTML element takes an attribute `href` that includes the url of the page to be linked. For example, if you want to link Google's home page (`https://www.google.com`):
+
+```html
+<a href="https://www.google.com">Google</a>
+```
+
+In your case, let's link a webpage that includes more information about your bird:
+
+```html
+<a href="https://startuppakistan.com.pk/chukar-some-facts-about-national-bird-of-pakistan/">More information</a>
+```
+
+Try adding a link to your bird web page.
+
+## How does it look
+
+Here's how your bird page look likes after adding the content. You can check it out here ([view website](https://topcamp.github.io/my-bird-website/)):
+
+![Chakor web page](/static/images/html-basics-3.png)
+
+If you are stuck at some point, you can compare your code with the finished code on [Github](https://github.com/TopCamp/my-bird-website/blob/gh-pages/index.html).
