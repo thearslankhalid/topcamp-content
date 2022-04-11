@@ -1,0 +1,198 @@
+---
+title: CSS Basics
+date: '2021-08-02'
+tags: ['getting-started']
+draft: false
+summary: 'In CSS basics, you will learn how to style your web page using CSS'
+layout: PostSimple
+---
+
+# CSS basics
+
+CSS is not a programming language. CSS is a style sheet language. It is used to style the content on the web. It controls how the content will be displayed to the user.
+
+Remember creating a `styles` folder in [organizing files](/blog/getting-started/learn/organizing-files), it will contain all the CSS files.
+
+Create a new file named `index.css` in `styles` folder and add the following code:
+
+```css
+p {
+  color: purple;
+}
+```
+
+Next we have to link the CSS file:
+
+1. Open the `index.html` file. Copy the following code between the `<head>` and `</head>` tags of the `index.html` file:
+
+```html
+<link href="/styles/index.css" rel="stylesheet" />
+```
+
+2. Save the `index.html` file. Reload the browser. You should see something like this:
+
+![Bird web page with purple text](/static/images/css-basics-1.png)
+
+If your paragraph text is of the color you added in `index.css` file, congratulations it's working.
+
+## Anatomy of a CSS ruleset
+Let's study the CSS of the colored paragraph to understand how it works:
+
+![CSS ruleset](/static/images/css-basics-2.png)
+
+A CSS ruleset has the following parts:
+
+1. **Selector**: A selector can be an HTML element (in this case `p`), class name (`.paragraph`) or an id (`#paragraph`). It selects the HTML element.
+2. **Declaration**: A declaration is a single rule like `color: red`. It specifies which of the element's property to style. In this case, it's `color`.
+3. **Property**: An HTML element has different properties that can be styled. In this case, you styled `color`.
+4. **Property value**: It is the value that is assigned to the property of the HTML element. In this case, we styled the `color` property of the `p` element with the value of `red`.
+
+There are some other important points to note in the syntax:
+
+- A ruleset starts with `{` after the selector and ends with `}`
+- There is a colon `:` in declaration
+- You can declare multiple rules separated by a semicolon `;`. For example
+
+```css
+p {
+  color: purple;
+  font-size: 20px;
+  line-height: 1.5;
+}
+```
+
+## Styling the web page
+
+We have gone over the absolute basics of the CSS. We can now start with styling the content of the web page.
+
+First remove the already added CSS for `p` element making sure that your CSS file is empty.
+
+### Adding the font
+
+In [planning your website](/blog/getting-started/planning-your-website), you selected a font family for your website from [Google fonts](https://fonts.google.com/).
+
+Go to the [Google fonts](https://fonts.google.com/) website. Select the font family. Select the font weights of the font and add the link provided by Google fonts in your `index.css` file. The font link will look like:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+```
+
+This will load the selected Google font in to your website. The next step is to use the font in your website. You can set the font by using `font-family` property. The following CSS will set the font-family of all the elements in HTML document to `Montserrat`: 
+
+```css
+body {
+  font-family: 'Montserrat';
+}
+```
+
+If everything goes right, font-family of all the HTML elements in your website will be updated.
+
+### Add some color
+
+Let's add some color to your website. In `planning your website`, we discussed that every website has a theme and used [a color Picker](https://www.w3schools.com/colors/colors_picker.asp) to select a color. The next steps are:
+
+1. Choose a light color (like <span style={{ color: 'lightgray' }}>lightgray</span>) and a dark background color (like <span style={{ color: 'grey' }}>grey</span>)  for your website theme.
+2. Choose a color for the HTML text elements that has a good contrast with the darker background color. For example, <span style={{ color: 'white' }}>white</span> color has good contrast with <span style={{ color: 'grey' }}>grey</span> color.
+3. Apply the background color to `html` root element using `background-color` property:
+
+```css
+html {
+  background-color: lightgray;
+}
+```
+
+4. Apply the background color to `body` element using `background-color` property:
+
+```css
+body {
+  font-family: 'Montserrat';
+  background-color: grey;
+}
+```
+
+5. Set the color of the text of the HTML elements by setting the value of the `color` property on the `body` element:
+
+```css
+body {
+  font-family: 'Montserrat';
+  background-color: grey;
+  color: white;
+}
+```
+
+6. Change the color of the anchor (`a`) element to a different color than white like <span style={{ color: 'palegreen' }}>palegreen</span>.
+
+```css
+a {
+  color: palegreen;
+}
+```
+
+7. Set the color of the `a` element to a different color (like <span style={{ color: 'lightblue' }}>lightblue</span>) when it is hovered:
+
+``` css
+a:hover {
+  color: lightblue;
+}
+```
+
+> Interactive HTML elements (like anchor tags (a), buttons, etc.) have different states for interactivity. These states can be designed using CSS to create a better user experience for the user. For example, when you hover over a link on a website, it's color or display changes.
+
+### Add some spacing
+
+Your website is looking much better than we started by adding some color. You can improve the presentation of your website further by adding styles for spacing.
+
+Take the following CSS:
+
+```css
+body {
+  font-family: 'Montserrat';
+  background-color: grey;
+  color: white;
+
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px; 
+}
+```
+
+1. The text is stretching to the whole website. We limited the text by setting the `max-width` property on the `body`.
+2. Next we used `margin` property to add a margin of `40px` from top and bottom and center align the `body` element from left and right.
+3. Next we used the `padding` property to give a spacing of `40px` internally to all the HTML elements inside the `body`.
+
+> Margin property is used to give external spacing between elements and padding property is used to give internal spacing between elements.
+
+If the image that you used for your website is larger than `600px` in width, it will overflow the `body` element. In order to avoid this, set the `width` property of the `img` element to 100%:
+
+```css
+img {
+  width: 100%;
+}
+```
+
+This makes sure that `img` element always takes the same width as of it's container.
+
+> The readability of the text is very important. You should always make sure that there is a good contrast between text and the background and the text can be read easily by the viewer.
+
+The text is looking a bit squished. You can improve the readability of the text by setting the `line-height` property:
+
+```css
+p, li {
+  line-height: 1.5;
+}
+```
+
+> Line height is the spacing between two lines of text. It is relative to the font-size of the element. A value of 1.5 means that it will take the current font-size of the element and multiply it with 1.5
+
+You will also have noticed that we are using `p` and `li` selectors separated by a `,`. You can select multiple HTML elements by separating the selectors with a `,` in CSS. The above rule selects all `p` and `li` elements in the HTML document and applies the `line-height`.
+
+## How does it look?
+
+If you have been following along, your website will be looking somewhat closer to this:
+
+![Chakor website](/static/images/css-basics-3.png)
+
+You can also view website here ([go to Chakor website](https://topcamp.github.io/my-bird-website-styled/)).
+
+If you are stuck on something, you can also [view the finished version on Github](https://github.com/TopCamp/my-bird-website-styled/blob/gh-pages/styles/style.css).
