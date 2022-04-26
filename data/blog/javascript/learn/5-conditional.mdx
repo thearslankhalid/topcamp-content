@@ -1,0 +1,195 @@
+---
+title: Conditionals
+date: '2021-07-20'
+tags: ['Javascript']
+draft: false
+summary: 'This is the introduction for the Javascript Conditions'
+layout: PostSimple
+---
+
+# Conditionals
+
+Conditionals control behavior in code or in this case in our JavaScript code, and it determines whether or not pieces of code can run.
+
+In simple terms its like a terms and condition document of an organization. You can take it as a rule, if that rule is followed then you can work otherwise you have to leave.
+
+## There are two sets of conditionals for now If..else of switch
+
+## If..else
+
+It has following keywords
+
+- if
+- else
+- else if
+
+> > if statements: where if a condition is true it is used to specify execution for a block of code.
+
+> > else if statements: this specifies a new test if the first condition is false.
+
+> > else statements: where if the same condition is false it specifies the execution for a block of code.
+
+The if and else if statement would only run if the condition inside the parentheses is true
+
+```JS
+
+if(true){
+    statment 1
+}
+
+else if(true){
+    statment 2
+}
+
+else {
+    statment3
+}
+
+```
+
+Example
+
+```JS
+
+if(true){
+	console.log("this is if")
+}
+else if(true){
+	console.log("this is else if")
+}
+
+else{
+	console.log("this is else ")
+}
+
+```
+
+## switch
+
+The switch statement is used to perform different actions based on different conditions.
+
+Syntax
+
+```JS
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+```
+
+If there is a match, the associated block of code is executed.
+If there is no match, the default code block is executed.
+
+Example??
+
+### break keyword
+
+When JavaScript reaches a break keyword, it breaks out of the switch block.
+
+This will stop the execution inside the switch block.
+
+Note: If you omit the break statement, the next case will be executed even if the evaluation does not match the case.
+
+### default
+
+The default keyword specifies the code to run if there is no case match:
+
+> The default case does not have to be the last case in a switch block:
+
+### Common code block
+
+Sometimes you will want different switch cases to use the same code.
+
+```JS
+
+switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    console.log("Soon it is Weekend");
+    break;
+  case 0:
+  case 6:
+    console.log("It is Weekend");
+    break;
+  default:
+      console.log("Looking forward to the Weekend");
+
+}
+```
+
+### switching details
+
+If multiple cases matches a case value, the first case is selected.
+
+If no matching cases are found, the program continues to the default label.
+
+If no default label is found, the program continues to the statement(s) after the switch.
+
+# Comparisons
+
+Comparisons and logical operators are used to test for true or false.
+
+- \== equal to
+- \=== equal value and equal type
+- \!= not equal
+- \!== not equal value or not equal type
+- \> greater than
+- \< less than
+- \>= greater than or equal to
+- \<\= less than or equal to
+
+Example
+
+```JS
+
+let i = 10;
+
+console.log("==", i==10)
+console.log("==", i==6)
+console.log("==", i=="10")
+
+console.log("===", i===10)
+console.log("===", i===6)
+console.log("===", i==="10")
+
+ console.log("!= ", i!= 10)
+console.log("!= ", i!= 6)
+console.log("!= ", i!= "10")
+
+ console.log("!== ", i!== 10)
+console.log("!== ", i!== 6)
+console.log("!== ", i!== "10")
+
+ console.log("> ", i> 10)
+console.log("> ", i> 6)
+console.log(">", i> "10")
+
+ console.log("<  ", i<  10)
+console.log("<  ", i<  6)
+console.log("< ", i< "10")
+
+ console.log(">= ", i>= 10)
+console.log(">= ", i>= 6)
+console.log(">= ", i>= "10")
+
+ console.log("<=  ", i<= 10)
+console.log("<=  ", i<= 6)
+console.log("<= ", i<=  "10")
+
+
+```
+
+## Logical Operators
+
+Logical operators are used to determine the logic between variables or values.
+
+- \&& and Both have to be true`
+- \|| or only one statment has to be true
+- \! not if false it gives true
