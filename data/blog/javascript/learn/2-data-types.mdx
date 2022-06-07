@@ -9,7 +9,8 @@ layout: PostSimple
 
 # Data Types
 
-Variables hold data/save data.
+
+Variables hold data/save data. They are the containers that hold data in them. 
 A variable has a type, value and a location.
 
 JavaScript variables can hold different data types: numbers, strings, objects etc
@@ -21,14 +22,15 @@ console.log("name",name);
 
 var is the keyword that tells JavaScript that we are declaring a variable.
 
-Similar to var we have const and let
+Similar to var we have const and let.
+
+Also a variable is somethings whose value can be changed in future. 
 
 ### var
 
 The scope is global when a var variable is declared outside a function.
 This means that any variable that is declared with var outside a function block is available for use in the whole window.
 
-var is function scoped when it is declared within a function. This means that it is available and can be accessed only within that function.
 
 ```JS
     var greeter = "hey hi";
@@ -53,21 +55,21 @@ var variables can be re-declared and updated
 
 ### let
 
-let is now preferred for variable declaration
+let is now preferred for variable declaration.
 
 let is block scoped
 
-So what is a block?
+But then what is a block?
 
 A block is a chunk of code bounded by {}. Anything within curly braces is a block.
 
 ```JS
-   let greeting = "say Hi";
+   let greeting = "Bye!!";
    let times = 4;
 
    if (times > 3) {
-        let hello = "say Hello instead";
-        console.log(hello);// "say Hello instead"
+        let hello = "Yo! Hey";
+        console.log(hello);// "Yo! Hey"
     }
    console.log(hello) // hello is not defined
 ```
@@ -86,7 +88,7 @@ const cannot be updated or re-declared
 ```JS
 const interest_rate = 0.4;
 //see invalid error being shown because const cannot be modified
-// interest_rate = 1;
+interest_rate = 1;
 console.log("interest rate", interest_rate);
 ```
 
