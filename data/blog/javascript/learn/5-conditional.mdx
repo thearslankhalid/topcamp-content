@@ -64,6 +64,59 @@ else{
 
 ```
 
+the if statment evaluates a condition in the parenthesis and if the results are true it would execute that block of code.
+
+### Boolean conversion
+
+the if satement evaluates the expression in its parenthsesis and converts the reult in boolean.
+
+so a number 0, an empty string “”, null, undefined, NaN and false all become false.
+
+others become true
+
+The `if` statement may contain an optional “else” block. It executes when the condition is falsy.
+
+```JS
+if(year == 2022){
+	console.log("This is our year")
+}else{
+console.log("this is not our year")
+}
+
+```
+
+Conditional Operators ‘?’
+
+Sometimes, we need to assign a variable depending on a condition.
+
+WE use ? oeprator
+
+it lets us perform the action in shorter and simplar way.
+
+It is also called ternary operator.
+
+```JS
+let value = condition ? value_one : value_two
+
+```
+
+The condition is evaluated: if it’s truthy then value_one is returned, otherwise – value_two.
+
+```JS
+let access_allowed = age > 18 ? "Yes" : "False"
+
+```
+
+A sequence of ‘?’ opertator could be added to the statment.
+
+```JS
+
+let age = propmt("age",18);
+
+let message = age > 3 "Hey! Baby" : age < 18 ? "Hello" : age < 100 ? "Greeting" : "What an unsual age";
+alert(message)
+```
+
 ## switch
 
 The switch statement is used to perform different actions based on different conditions.
@@ -193,3 +246,136 @@ Logical operators are used to determine the logic between variables or values.
 - \&& and Both have to be true`
 - \|| or only one statment has to be true
 - \! not if false it gives true
+
+# Logical Operators
+
+There are 4 logical operators in JS
+
+|| OR
+
+&& AND
+
+! NOT
+
+?? Nullish Coalescing
+
+or Logical possiblities
+
+```JS
+alert( true || true );   // true
+alert( false || true );  // true
+alert( true || false );  // true
+alert( false || false ); // false
+
+```
+
+As we can see, the result is always `true` except for the case when both operands are `false`.
+
+If an operand is not a boolean, it’s converted to a boolean for the evaluation.
+
+```JS
+if (1 || 0) { // works just like if( true || false )
+  alert( 'truthy!' );
+}
+
+```
+
+example in if
+
+```JS
+let time = 2;
+if(time < 2 || time > 2){
+		console.log("this is 2 time")
+}
+
+```
+
+The AND operator is represented with two ampersands &&:
+
+```JS
+result = a && b;
+
+```
+
+In classical programming, AND returns true if both operands are truthy and false otherwise:
+
+```JS
+  alert( true && true );   // true
+alert( false && true );  // false
+alert( true && false );  // false
+alert( false && false ); // false
+```
+
+```JS
+let hour = 12;
+let minute = 30;
+
+if (hour == 12 && minute == 30) {
+  alert( 'The time is 12:30' );
+}
+```
+
+The precedence of AND && operator is higher than OR ||.
+
+### NOT
+
+The boolean NOT operator is represented with an exclamation sign !.
+
+```JS
+
+result = !value;
+```
+
+The operator accepts a single argument and does the following:
+
+1. Converts the operand to boolean type: `true/false`.
+2. Returns the inverse value.
+
+\***\*Nullish coalescing operator '??'\*\***
+
+The nullish coalescing operator is written as two question marks `??`.
+
+As it treats `null`
+ and `undefined`
+ similarly, we’ll use a special term here, in this article. For brevity, we’ll say that a value is “defined” when it’s neither `null`
+ nor `undefined`
+.
+
+The result of `a ?? b` is:
+
+- if `a` is defined, then `a`,
+- if `a` isn’t defined, then `b`
+
+In other words, `??` returns the first argument if it’s not `null/undefined`. Otherwise, the second one.
+
+```JS
+  In other words, ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
+
+
+```
+
+Now it should be absolutely clear what `??` does. Let’s see where it helps.
+
+The common use case for `??` is to provide a default value.
+
+```JS
+  let user;
+
+alert(user ?? "Anonymous"); // Anonymous (user not defined)
+```
+
+- `||` returns the first *truthy* value.
+- `?? returns the first *defined* value.
+
+In other words, `||`
+doesn’t distinguish between `false`
+, `0`
+, an empty string `""`
+and `null/undefined`
+. They are all the same – falsy values. If any of these is the first argument of `||`
+, then we’ll get the second argument as the result.
+
+Due to safety reasons, JavaScript forbids using `??`
+together with `&&`
+and `||`
+operators, unless the precedence is explicitly specified with parentheses.
