@@ -1,0 +1,93 @@
+---
+title: Javascript Classes
+date: '2021-07-20'
+tags: ['Javascript']
+draft: false
+summary: 'Understanding Classes in JS'
+layout: PostSimple
+---
+
+# Javascript Classes
+
+A JavaScript class is a blueprint for creating objects
+
+Syntax
+
+```JS
+class ClassName {
+  constructor() { ... }
+}
+```
+
+Example
+
+```JS
+class Person {
+  constructor(name, data_of_birth) {
+    this.name = name;
+    this.data_of_birth = death_of_birth;
+  }
+}
+```
+
+The following example creates a class named "Person"
+
+Note:
+
+- A JavaScript class is not an object.
+
+- It is a template for JavaScript objects.
+
+### Using Classes
+
+When you have a class, you can use it to create object:
+
+for example
+
+```JS
+let first_person = new Person("Ahmad", "24-8-1876")
+let second_persoon = new Person("Qazi", "5-8-1990");
+```
+
+## What is constructor?
+
+constructor is a method.
+
+It is executed whenever a new object is created.
+
+It is used to initialize the object properties.
+
+If you do not define a constructor method, JavaScript will add an empty constructor method
+
+## class methods
+
+declated after the constructor method
+
+Example
+
+```JS
+
+class Person {
+    constructor(name, data_of_birth) {
+    this.name = name;
+    this.data_of_birth = data_of_birth;
+  }
+
+    firstFunction(){
+        //would make a statment and return it
+			return "function call"
+
+    }
+
+    secondFunction(){
+
+    }
+}
+
+
+let first_person = new Person("Ahmad", "24-8-1875");
+
+console.log("this is man", first_person.firstFunction());
+
+
+```

@@ -1,0 +1,285 @@
+---
+title: DOM
+date: '2021-07-20'
+tags: ['Javascript']
+draft: false
+summary: 'Understanding DOM'
+layout: PostSimple
+---
+
+# What is DOM
+
+DOM is Document Object Model.
+
+The DOM defines the way in which HTML document objects are exposed to your script.
+
+DOM can also be defined as a programming interface for web documents.
+
+DOM allows webpage to be manipulated
+
+On webpage we have 3 different languages working together which are HTML, CSS and JavaScript.
+
+So we use DOM when we interact with webpages e.g add content to our html document, delete content from our HTML document or change content from our HTML document.
+
+Now breaking down.
+
+### What is document?
+
+Document is just the webpage
+
+### What is Object?
+
+Object are elements
+
+Every HTML element in the document is an object
+
+//html tags are objects add image here
+
+## What is model?
+
+![DOM](/static/images/javascript/1-dom.jpg)
+
+All of the properties, methods, and events available for manipulating and creating web pages are organized into objects. For example, the document object that represents the document itself, any table objects that implement the HTMLTableElement DOM interface for accessing HTML tables, and so forth, are all objects.
+
+The DOM is not part of the JavaScript language, but is instead a Web API used to build websites. JavaScript can also be used in other contexts. For example, Node.js runs JavaScript programs on a computer, but provides a different set of APIs, and the DOM API is not a core part of the Node.js runtime.
+
+The programming interface is the properties and methods of each object.
+
+## Accessing The DOM
+
+You don't have to do anything special to begin using the DOM.
+
+As it is generally not recommended to mix the structure of the page (written in HTML) and manipulation of the DOM (written in JavaScript), the JavaScript parts will be grouped together here, and separated from the HTML.
+
+A property is a value that you can get or set (like changing the content of an HTML element).
+
+A method is an action you can do (like add or deleting an HTML element).
+
+## Data Types in DOM
+
+- Document: HTML DOM document object is the owner of all other objects in your webpage.
+  If you want to access any element in an HTML page, you always start with accessing the document object.
+
+- Node : Every object located within a document is a node of some kind. In an HTML document, an object can be an element node but also a text node or attribute node.
+
+- Element :
+
+- NodeList: A nodeList is an array of elements, like the kind that is returned by the method document.querySelectorAll(). Items in a nodeList are accessed by index in either of two ways: list.item(1) list[1]
+
+- Attr:
+
+- NamedNodeMap:
+
+## DOM Interfaces
+
+This guide is about the objects and the actual things you can use to manipulate the DOM hierarchy.
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+
+### JavaScript has all the power to create dynamic HTML
+
+- JavaScript can change all the HTML elements in the page
+- JavaScript can change all the HTML attributes in the page
+- JavaScript can change all the CSS styles in the page
+- JavaScript can remove existing HTML elements and attributes
+- JavaScript can add new HTML elements and attributes
+- JavaScript can react to all existing HTML events in the page
+- JavaScript can create new HTML events in the page
+
+Example
+
+```HTML
+ <html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello World!";
+</script>
+
+</body>
+</html>
+
+```
+
+In the example above, getElementById is a method, while innerHTML is a property.
+
+### Finding HTML Elements
+
+document.getElementById(id) Find an element by element id
+document.getElementsByTagName(name) Find elements by tag name
+document.getElementsByClassName(name) Find elements by class name
+
+### Changing HTML Elements
+
+element.innerHTML = new html content Change the inner HTML of an element
+Change the inner HTML of an element Change the attribute value of an HTML element
+element.style.property = new style Change the style of an HTML element
+
+### Adding and Deleteing Elements
+
+document.createElement(element) Create an HTML element
+document.removeChild(element) Remove an HTML element
+
+### Adding Events Handlers
+
+document.getElementById(id).onclick = function()\{code} Adding event handler code to an onclick event
+
+## Accessing HTML DOM Elements using js
+
+See finding HTML Elements on the same page. Along with this we have other methods to access HTML DOM elements which are
+By CSS selectors or by HTML object collections
+
+### Finding by Id
+
+```JS
+    const element = document.getElementById("first");
+```
+
+If the element is found, the method will return the element as an object (in element).
+
+If the element is not found, element will contain null.
+
+### Finding by Tag Name
+
+It will return all elements with that tag in our document
+
+```JS
+    const element  = getElementsByTagName('p');
+```
+
+It will return all HTML elements with html p tag
+
+or there is a way if we want to select tags from a specific div
+
+```JS
+
+const x = document.getElementById("main");
+const y = x.getElementsByTagName("p");
+```
+
+### Finding elements by class name
+
+If you want to find all HTML elements with the same class name, use getElementsByClassName().
+
+```JS
+    const element = document.getElementsByClassName("first class")
+```
+
+### Finding elements by CSS selectors
+
+querySelectorAll("")
+
+querySelector("")
+
+```JS
+    const element  = document.querySelectorAll("elements")
+```
+
+# Events
+
+A javascript code can be executed when an event occurs e.g click, change, hover etc.
+
+### HTML events
+
+- When mouse is clicked
+- When mouse is hovered over some element HTML
+- When an image has been loaded
+- When a webpage is loaded
+- When an input field is changed
+- When an HTML form is submitted
+- When a user strokes a key
+
+### When mouse is clicked
+
+Example
+
+```HTML
+<!DOCTYPE html>
+    <html>
+    <body>
+
+    <h1 onclick="this.innerHTML = 'Text changed!'">Click on this text to change the text!</h1>
+
+    </body>
+</html>
+```
+
+### When webpage is loaded
+
+The onload and onunload events
+
+The onload event occurs when user enters a page
+
+The onunload event occurs when user leave a page
+
+The onload event can be used to check the visitor's browser type and browser version, and load the proper version of the web page based on the information.
+
+The onload and onunload events can be used to deal with cookies.
+
+### onchange event
+
+The onchange event is often used in combination with validation of input fields.
+
+Example
+
+```HTML
+    example?
+```
+
+# Event Listener
+
+Add event Listener to respond to when certain events occur e.g click, change etc
+
+Syntax
+
+element.addEventListener(event, function, useCapture);
+
+event -> click, mousedown, change etc
+function -> function we want to call to perform some action
+useCapture -> optional event used for bubbling or event capture (would be discussed later)
+
+Example
+
+```HTML
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Event Listener</h2>
+
+<button id="my-btn">Click</button>
+
+<script>
+document.getElementById("my-btn").addEventListener("click", function() {
+  alert("Hello World!");
+});
+</script>
+
+</body>
+</html>
+```
+
+You can also add muliple event handlers to the same element
+
+> > Passing parameters element.addEventListener
+
+```JS
+\("click", function(){ myFunction(p1, p2); });
+```
+
+### Event Bubbling or Event Capturing?
+
+There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+
+For example if you have a h1 element inside a div element, and the user clicks on the h1 element, in this case how the event would be handled?
+
+In bubbling the inner most element's event is handled first and then the outer: So in this case h1 element event would be handled first and then the div element's event
+
+In capturing the outer most element's event is handled first and then the inner: So in this case div element's event would be handled first and then h1
+
+With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter:
+addEventListener(event, function, useCapture);
+
+The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.

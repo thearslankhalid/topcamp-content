@@ -1,0 +1,381 @@
+---
+title: Conditionals
+date: '2021-07-20'
+tags: ['Javascript']
+draft: false
+summary: 'This is the introduction for the Javascript Conditions'
+layout: PostSimple
+---
+
+# Conditionals
+
+Conditionals control behavior in code or in this case in our JavaScript code, and it determines whether or not pieces of code can run.
+
+In simple terms its like a terms and condition document of an organization. You can take it as a rule, if that rule is followed then you can work otherwise you have to leave.
+
+## There are two sets of conditionals for now If..else of switch
+
+## If..else
+
+It has following keywords
+
+- if
+- else
+- else if
+
+> > if statements: where if a condition is true it is used to specify execution for a block of code.
+
+> > else if statements: this specifies a new test if the first condition is false.
+
+> > else statements: where if the same condition is false it specifies the execution for a block of code.
+
+The if and else if statement would only run if the condition inside the parentheses is true
+
+```JS
+
+if(true){
+    statment 1
+}
+
+else if(true){
+    statment 2
+}
+
+else {
+    statment3
+}
+
+```
+
+Example
+
+```JS
+
+if(true){
+	console.log("this is if")
+}
+else if(true){
+	console.log("this is else if")
+}
+
+else{
+	console.log("this is else ")
+}
+
+```
+
+the if statment evaluates a condition in the parenthesis and if the results are true it would execute that block of code.
+
+### Boolean conversion
+
+the if satement evaluates the expression in its parenthsesis and converts the reult in boolean.
+
+so a number 0, an empty string “”, null, undefined, NaN and false all become false.
+
+others become true
+
+The `if` statement may contain an optional “else” block. It executes when the condition is falsy.
+
+```JS
+if(year == 2022){
+	console.log("This is our year")
+}else{
+console.log("this is not our year")
+}
+
+```
+
+Conditional Operators ‘?’
+
+Sometimes, we need to assign a variable depending on a condition.
+
+WE use ? oeprator
+
+it lets us perform the action in shorter and simplar way.
+
+It is also called ternary operator.
+
+```JS
+let value = condition ? value_one : value_two
+
+```
+
+The condition is evaluated: if it’s truthy then value_one is returned, otherwise – value_two.
+
+```JS
+let access_allowed = age > 18 ? "Yes" : "False"
+
+```
+
+A sequence of ‘?’ opertator could be added to the statment.
+
+```JS
+
+let age = propmt("age",18);
+
+let message = age > 3 "Hey! Baby" : age < 18 ? "Hello" : age < 100 ? "Greeting" : "What an unsual age";
+alert(message)
+```
+
+## switch
+
+The switch statement is used to perform different actions based on different conditions.
+
+Syntax
+
+```JS
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+```
+
+If there is a match, the associated block of code is executed.
+If there is no match, the default code block is executed.
+
+Example??
+
+### break keyword
+
+When JavaScript reaches a break keyword, it breaks out of the switch block.
+
+This will stop the execution inside the switch block.
+
+Note: If you omit the break statement, the next case will be executed even if the evaluation does not match the case.
+
+### default
+
+The default keyword specifies the code to run if there is no case match:
+
+> The default case does not have to be the last case in a switch block:
+
+### Common code block
+
+Sometimes you will want different switch cases to use the same code.
+
+```JS
+
+switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    console.log("Soon it is Weekend");
+    break;
+  case 0:
+  case 6:
+    console.log("It is Weekend");
+    break;
+  default:
+      console.log("Looking forward to the Weekend");
+
+}
+```
+
+### switching details
+
+If multiple cases matches a case value, the first case is selected.
+
+If no matching cases are found, the program continues to the default label.
+
+If no default label is found, the program continues to the statement(s) after the switch.
+
+# Comparisons
+
+Comparisons and logical operators are used to test for true or false.
+
+- \== equal to
+- \=== equal value and equal type
+- \!= not equal
+- \!== not equal value or not equal type
+- \> greater than
+- \< less than
+- \>= greater than or equal to
+- \<\= less than or equal to
+
+Example
+
+```JS
+
+let i = 10;
+
+console.log("==", i==10)
+console.log("==", i==6)
+console.log("==", i=="10")
+
+console.log("===", i===10)
+console.log("===", i===6)
+console.log("===", i==="10")
+
+ console.log("!= ", i!= 10)
+console.log("!= ", i!= 6)
+console.log("!= ", i!= "10")
+
+ console.log("!== ", i!== 10)
+console.log("!== ", i!== 6)
+console.log("!== ", i!== "10")
+
+ console.log("> ", i> 10)
+console.log("> ", i> 6)
+console.log(">", i> "10")
+
+ console.log("<  ", i<  10)
+console.log("<  ", i<  6)
+console.log("< ", i< "10")
+
+ console.log(">= ", i>= 10)
+console.log(">= ", i>= 6)
+console.log(">= ", i>= "10")
+
+ console.log("<=  ", i<= 10)
+console.log("<=  ", i<= 6)
+console.log("<= ", i<=  "10")
+
+
+```
+
+## Logical Operators
+
+Logical operators are used to determine the logic between variables or values.
+
+- \&& and Both have to be true`
+- \|| or only one statment has to be true
+- \! not if false it gives true
+
+# Logical Operators
+
+There are 4 logical operators in JS
+
+|| OR
+
+&& AND
+
+! NOT
+
+?? Nullish Coalescing
+
+or Logical possiblities
+
+```JS
+alert( true || true );   // true
+alert( false || true );  // true
+alert( true || false );  // true
+alert( false || false ); // false
+
+```
+
+As we can see, the result is always `true` except for the case when both operands are `false`.
+
+If an operand is not a boolean, it’s converted to a boolean for the evaluation.
+
+```JS
+if (1 || 0) { // works just like if( true || false )
+  alert( 'truthy!' );
+}
+
+```
+
+example in if
+
+```JS
+let time = 2;
+if(time < 2 || time > 2){
+		console.log("this is 2 time")
+}
+
+```
+
+The AND operator is represented with two ampersands &&:
+
+```JS
+result = a && b;
+
+```
+
+In classical programming, AND returns true if both operands are truthy and false otherwise:
+
+```JS
+  alert( true && true );   // true
+alert( false && true );  // false
+alert( true && false );  // false
+alert( false && false ); // false
+```
+
+```JS
+let hour = 12;
+let minute = 30;
+
+if (hour == 12 && minute == 30) {
+  alert( 'The time is 12:30' );
+}
+```
+
+The precedence of AND && operator is higher than OR ||.
+
+### NOT
+
+The boolean NOT operator is represented with an exclamation sign !.
+
+```JS
+
+result = !value;
+```
+
+The operator accepts a single argument and does the following:
+
+1. Converts the operand to boolean type: `true/false`.
+2. Returns the inverse value.
+
+\***\*Nullish coalescing operator '??'\*\***
+
+The nullish coalescing operator is written as two question marks `??`.
+
+As it treats `null`
+ and `undefined`
+ similarly, we’ll use a special term here, in this article. For brevity, we’ll say that a value is “defined” when it’s neither `null`
+ nor `undefined`
+.
+
+The result of `a ?? b` is:
+
+- if `a` is defined, then `a`,
+- if `a` isn’t defined, then `b`
+
+In other words, `??` returns the first argument if it’s not `null/undefined`. Otherwise, the second one.
+
+```JS
+  In other words, ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
+
+
+```
+
+Now it should be absolutely clear what `??` does. Let’s see where it helps.
+
+The common use case for `??` is to provide a default value.
+
+```JS
+  let user;
+
+alert(user ?? "Anonymous"); // Anonymous (user not defined)
+```
+
+- `||` returns the first *truthy* value.
+- `?? returns the first *defined* value.
+
+In other words, `||`
+doesn’t distinguish between `false`
+, `0`
+, an empty string `""`
+and `null/undefined`
+. They are all the same – falsy values. If any of these is the first argument of `||`
+, then we’ll get the second argument as the result.
+
+Due to safety reasons, JavaScript forbids using `??`
+together with `&&`
+and `||`
+operators, unless the precedence is explicitly specified with parentheses.

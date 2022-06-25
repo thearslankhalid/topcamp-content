@@ -1,0 +1,139 @@
+---
+title: Mathematical
+date: '2021-08-06'
+tags: ['Javascript']
+draft: false
+summary: 'This is the introduction for the Javascript Data Types'
+layout: PostSimple
+---
+
+# Mathematical Operators
+
+We know many mathematical operations e.g addition + , subtraction -, multiplication \* etc.
+
+Familiarity with few terms
+
+Operand: These are what operators are applied to. For example 8 - 2, here 8 and 2 are operands to which \* operator is being applied. Some people also called them arguments which is perfectly normal.
+
+An operator in unary if it has one operand for example -1
+
+and binary if it has 2 operands e.g 5\*2
+
+We have other operands in the list. division / , remainder % and Exponention \*\*.
+
+The remainder operator `%`, despite its appearance, is not related to percents.
+
+it gives us the remainder e.g 8%3 gives us 2 and 5%2 gives us ?.
+
+exponention is like 2^2 → 2\*\*2 = 4;
+
+### String Concatenation
+
+We can use + operator to add two or more strings. Here add means to concatenate (merges)
+
+```JS
+
+let added_string = "my" + "new" + "string";
+console.log(added_string);
+```
+
+Note that if one is string and other is not string then it would be converted to string and concatenated with the string.
+
+```JS
+console.log("this is my string" + 2 );
+
+```
+
+example
+
+`alert(2 + 2 + '1' ); // "41" and not "221"`
+
+The binary + is the only operator that supports strings in such a way. Other arithmetic operators work only with numbers and always convert their operands to numbers.
+
+```JS
+alert( 6 - '2' ); // 4, converts '2' to a number
+alert( '6' / '2' ); // 3, converts both operands to numbers
+
+```
+
+### Operator precedence
+
+IF an expression has more than one operator than the execution order is defined by their precedence i.e the heriarchial order in which the operators will be executed. e.g BDMAS rule in school.
+
+There are many operators in JavaScript. Every operator has a corresponding precedence number. The one with the larger number executes first. If the precedence is the same, the execution order is from left to right.
+
+Assignment operator
+
+= is also an operator known as assignment operator. It has the lowest precdence.
+
+Modify in place
+
+We need to apply an operator to a variable and need to save it in the same variable.
+
+```JS
+let x = 2
+x = x+2;
+x = x*5'
+
+//it can be done as follows
+let x = 2;
+x += 2;
+n *= 5;
+
+```
+
+### Increment/decrement
+
+increment ++ increases the value by 1
+
+decrement - - decreases the value by 1
+
+```JS
+let counter = 2;
+counter++;
+alert(counter)
+
+
+let counter_second = 3
+counter_second--;
+alert(counter_second)
+
+
+```
+
+Increment/decrement can only be applied to variables. Trying to use it on a value like `5++` will give an error.
+
+The operators `++` and `--` can be placed either before or after a variable.
+
+- When the operator goes after the variable, it is in “postfix form”: `counter++`.
+- The “prefix form” is when the operator goes before the variable: `++counter`.
+
+Both of them increase the value by 1 … so where is the difference?
+
+All operators return a value. Increment/decrement is no exception. The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
+
+```JS
+
+let counter = 1;
+let a = ++counter;
+
+alert(a); // 2
+
+```
+
+```JS
+let counter = 1;
+let a = counter++;
+
+alert(a); // 1
+```
+
+bitwise operators
+
+- AND ( `&` )
+- OR ( `|` )
+- XOR ( `^` )
+- NOT ( `~` )
+- LEFT SHIFT ( `<<` )
+- RIGHT SHIFT ( `>>` )
+- ZERO-FILL RIGHT SHIFT ( `>>>` )

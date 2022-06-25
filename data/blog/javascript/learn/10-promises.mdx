@@ -1,0 +1,77 @@
+---
+title: Javascript Promises
+date: '2021-07-20'
+tags: ['Javascript']
+draft: false
+summary: 'This is the introduction to understanding javascript promises'
+layout: PostSimple
+---
+
+# Promises
+
+Promises are used to handle asynchronous operations in JavaScript. We use promises when we need a specific function or piece of code to
+complete its execution and then execute rest of the code after it.
+
+Previously callbacks were used for this purpose but it created a lot of unmanageable code and reduced code readability.
+
+Syntax
+
+```JS
+
+let my_first_promise = new Promise(function(Resolve, Reject) {
+    //runs when successful execution
+    Resolve();
+    //runs when failed execution
+    Reject();
+});
+
+//executes after the promise has been fulfilled
+myPromise.then(
+//success code run
+  function(value),
+  //error in execution of the code
+  function(error)
+);
+
+```
+
+### Promise Object
+
+A promise object can be pending (which means working and it is undefined)
+
+Fulfilled meaning the promise is fulfilled or complete and result is some value
+
+Rejected means there was an error and error object is the result.
+
+Example
+
+we will use example by using a callback function called timeout
+
+using callback
+
+```JS
+
+setTimeout(function() { myFunction("This is a callback function"); }, 3000);
+
+function myFunction(value) {
+  console.log( value);
+	}
+
+
+```
+
+using promise
+
+```JS
+
+
+let my_first_promise = new Promise(function(Resolve, Reject) {
+  setTimeout(function() { Resolve("This is from promise!!"); }, 3000);
+});
+
+my_first_promise.then(function(value) {
+  console.log( value);
+});
+
+
+```

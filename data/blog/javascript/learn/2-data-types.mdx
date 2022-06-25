@@ -1,0 +1,301 @@
+---
+title: Data Types
+date: '2021-08-06'
+tags: ['Javascript']
+draft: false
+summary: 'This is the introduction for the Javascript Data Types'
+layout: PostSimple
+---
+
+# Data Types
+
+An application that's built in JavaScript needs to work with information (although all languages work with information).
+
+For example:
+A social media website e.g Facebook
+or an online shopping website e.g Daraz
+
+To store the information we use variables.
+
+Variables hold data/save data.
+
+They are the containers that hold data in them.
+
+A variable has a type, value and a location.
+
+JavaScript variables can hold different data types: numbers, strings, objects etc
+
+```javascript
+var name = 'Top'
+console.log('name', name)
+```
+
+var is the keyword that tells JavaScript that we are declaring a variable.
+
+Similar to var we have const and let.
+
+Also a variable is somethings whose value can be changed in future.
+
+### A real life analogy could be a box (variable), box contents (its memory)
+
+### var
+
+The scope is global when a var variable is declared outside a function.
+This means that any variable that is declared with var outside a function block is available for use in the whole window.
+
+```JS
+    var greeter = "hey hi";
+
+    function newFunction() {
+        var hello = "hello";
+    }
+```
+
+Here, greeter is globally scoped because it exists outside a function while hello is function scoped. So we cannot access the variable hello outside of a function. So if we do this:
+
+```JS
+   var tester = "hey hi";
+
+    function newFunction() {
+        var hello = "hello";
+    }
+    console.log(hello); // error: hello is not defined
+```
+
+var variables can be re-declared and updated
+
+### let
+
+let is now preferred for variable declaration.
+
+let is block scoped
+
+But then what is a block?
+
+A block is a chunk of code bounded by {}. Anything within curly braces is a block.
+
+```JS
+   let greeting = "Bye!!";
+   let times = 4;
+
+   if (times > 3) {
+        let hello = "Yo! Hey";
+        console.log(hello);// "Yo! Hey"
+    }
+   console.log(hello) // hello is not defined
+```
+
+We see that using hello outside its block (the curly braces where it was defined) returns an error. This is because let variables are block scoped;
+
+let can be updated but not re-declared.
+
+### Const
+
+Variables declared with the const maintain constant values.
+
+They cannot be reassigned.
+
+const declarations share some similarities with let declarations.
+
+const declarations are block scoped
+
+const cannot be updated or re-declared
+
+BEST PRACTICE FOR DECLARING CONSTANTS
+
+use UPPERCASE CONSTANTS
+
+```JS
+const interest_rate = 0.4;
+//see invalid error being shown because const cannot be modified
+interest_rate = 1;
+console.log("interest rate", interest_rate);
+```
+
+## Rules for naming variables
+
+- Cant be reserved keywords e.g static, const, if etc
+- Use some case like camel, snake case to have a coherent understanding and simplicity
+- Should be meaningfull
+- Cannot start with the number
+- Cannot contain space or hyphen
+- Case sensitive
+- Declare multiple variables but not necessary
+
+You should name the variables right.
+
+A variable name should have a clean, obvious meaning, describing the data that it stores
+
+So give sufficent time to think about the variables and give them right name so it is easier to understand that that variable
+holdes when you look back at your code after some time or someone else sees it.
+
+## Primitive type and Reference type
+
+### primitive types
+
+string
+number
+boolean
+undefiend
+null
+
+They are not objects, and do not have methods.
+Note: Javascript is a dynamic language it detects the type itself but in C++ you have to declate int or string.
+
+JavaSvript converts primitive strings to string objects, so that it is possible to use string object methods.
+
+There are eight basic data types in Javascript. We can put any type of data in a variable. e.g at one time it can be a
+number stored in it and the next time we can overwrite the value of that variable with some string
+
+```JS
+let greeting = 123456;
+gretting = "Hi!"
+
+```
+
+Programming languages what allow such type of flexiblity are called dynamically types language meaning that there exist data type but variables are not bound by them.
+
+### Number
+
+The number data type represents both integer and floating point numbers.
+
+NaN means not a number
+
+```JS
+    console.log("this is not a number" / 2);
+```
+
+BigInt
+
+In JavaScript, the “number” type cannot represent integer values larger than `(253-1)`
+ (that’s `9007199254740991`
+), or less than `-(253-1)`
+ for negatives. It’s a technical limitation caused by their internal representation.
+
+For most purposes integer data type in enough, but sometimes we need really big numbers, e.g. for cryptography or microsecond-precision timestamps.
+
+A `BigInt` value is created by appending `n` to the end of an integer:
+
+e.g
+
+`const bigInt = 1234567890123456789012345678901234567890n;`
+
+but bigInt numbers are rarely used in normal SaaS based applications.
+
+### string
+
+we can declare string by
+
+```JS
+    let str = "This is string 1";
+let str2 = 'This is string 2';
+let str3 = `we can do this when we need to add a number or add some other value ${str}`;
+```
+
+Back ticks are “extended functionality” quotes. They allow us to embed variables and expressions into a string by wrapping them in `${…}`
+
+### Boolean
+
+### null
+
+It’s just a special value which represents “nothing”, “empty” or “value unknown”.
+
+### undefined
+
+The meaning of `undefined` is “value is not assigned”.
+
+Functions belong to the object type. But typeof treats them differently, returning "function"
+
+### How to know what type of variable it is? Use typeof
+
+There is no float type in JavaScript
+
+### Reference types
+
+Reference data types, unlike primitive data types, are dynamic in nature. That is, they do not have a fixed size.
+Most of them are considered as objects, and therefore have methods.
+
+object
+Array
+Function (Study in Next lecture)
+
+### Object
+
+An object has a set of properties and functions
+
+```JS
+
+let student =
+    name: "Maaz",
+    age: 20,
+
+
+console.log("Student", student);
+
+```
+
+How to change object values
+
+1. By dot notaation
+
+```JS
+   student.name = "Ahmad"
+
+```
+
+2. By bracket notation
+
+```JS
+    student["name"] = "Ahmad"
+
+```
+
+Re Declaration of Reference and Primitive Types
+
+```JS
+let a = "Orange"
+let b = a
+b = "Mango"
+
+
+console.log("For variable scope",a, b)
+
+ let object_a = {
+  id: 1,
+  name: "Ahmad"
+}
+
+let object_b = object_a;
+
+object_b.name = "Maaz"
+
+console.log(object_a)
+console.log(object_b)
+```
+
+## ARRAYS
+
+In JavaScript, array is a single variable that is used to store different elements. It is often used when we want to store list of elements and access them by a single variable
+
+Two Methods of Declare an Array
+
+```JS
+var House = [ ]; // method 1
+var House = new Array(); // method 2
+```
+
+```JS
+var selected_color = ['red', 'blue']
+console.log("selected", selected_color)
+//length, add in array by index //dynamic array numner and string combination
+```
+
+Arrays have functions like
+push
+pop
+unshift
+concat
+
+![Difference between non-zero value, null and undefined](/static/images/data-types-1.png)
+
+Are Array reference types? if Yes show show with an example

@@ -1,0 +1,100 @@
+---
+title: Loops
+date: '2021-08-06'
+tags: ['Javascript']
+draft: false
+summary: 'This is the introduction for the Javascript Loops'
+layout: PostSimple
+---
+
+# Loops
+
+Loops can execute a block of code a number of times.
+
+Loops offer a quick and easy way to do something repeatedly witout writing any extra code. It runs the same code over and over again, each time with a different value.
+
+```JS
+
+for (let step = 0; step < 5; step++) {
+  // Runs 5 times, with values of step 0 through 4.
+  console.log('Walking east one step');
+}
+
+```
+
+There are many different kinds of loops but all of them perform the same function which is that they repeat the same action for a number of times.
+
+### Loops types
+
+- for loop
+- do while
+- while
+- for in
+
+> > important statments in loops continue and break
+
+### for loop
+
+A for loop repeats itself until a specified condition is false.
+
+```JS
+for ([initialExpression]; [conditionExpression]; [incrementExpression])
+  statement
+```
+
+### do while
+
+A do while statments repeats itself until a specified condition evaluates to false
+
+```JS
+do
+  statement
+while (condition);
+```
+
+If condition is true, the statement executes again. At the end of every execution, the condition is checked. When the condition is false, execution stops, and control passes to the statement following do...while.
+
+```JS
+let j = 0;
+do {
+ j += 1;
+  console.log(j);
+} while (j < 7);
+```
+
+### while
+
+A while statment executes the same statment again and again until the condition evalutes to false
+
+```JS
+
+while(condtion){
+    statment
+}
+
+```
+
+```JS
+while(true){
+console.log("Hello world")
+}
+
+```
+
+### for in
+
+The for in statment iterates a specified variable over all the enumerable properties of an object.
+
+Syntax
+
+```JS
+for (variable in object)
+  statement
+```
+
+### break and continue
+
+- The break statment "Jumps out" of a loop
+- The continue statment "Jumps over" one iteration in the loop.
+
+## Labels in Javascript

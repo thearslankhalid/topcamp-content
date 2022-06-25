@@ -1,0 +1,94 @@
+---
+title: Basics
+date: '2021-08-06'
+tags: ['Javascript']
+draft: false
+summary: 'Basics to know of getting started'
+layout: PostSimple
+---
+
+# What is programming and javascript
+
+Javascript is one of the most popular programming languages in the world.
+
+It is mainly the language of Web.
+
+P.S Web isn't the term to define the whole internet. Web is just a part of internet.
+
+Javascript is one of the 3 languages that is necessary to learn Web Development.
+
+First two were HTML and CSS which you learnt in previous classes.
+
+Our enviorment of work would be browser for now.
+
+## Setting up our envriornment
+
+```HTML
+
+<!DOCTYPE HTML>
+
+<html>
+
+<body>
+
+  <p>Before the script...</p>
+
+  <script>
+    alert( 'Hello, world!' );
+  </script>
+
+  <p>...After the script.</p>
+
+</body>
+
+</html>
+
+```
+
+Javascript could would always be inserted in `<script>` tag or it could be imported from other file.
+
+The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
+
+IF you want to execute an external script than it could be imported as follows
+
+```HTML
+<script src="/path/to/script.js"></script>
+
+```
+
+To attach a script with URL e.g a library
+
+```HTML
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+
+```
+
+Or if you want to import many files
+
+```HTML
+<script src="/js/script1.js"></script>
+<script src="/js/script2.js"></script>
+```
+
+### Comments in JavaScript
+
+With time programs i.e our code becomes more and more complex. So sometimes it becomes necessary to add comments to describe what the code does and why
+
+We can add comments in any place in our script and they don't effect the execution of the code. Comments are just ignored when the code
+is being complied.
+
+one line comment can be added by //
+
+```JS
+// alert("this is comments")
+```
+
+multi line comment can be added using /\* \*/
+
+```JS
+    /*alert("multi")
+    alert("Line")
+    alert("Comment")*/
+```
+
+It is a good practice to add comments in your code so others could understand it. And having too many comments isn't any issues, since there are tools that minify the code before deploying and the comments are removed from it. Hence, comments have no negative effect on production at all.

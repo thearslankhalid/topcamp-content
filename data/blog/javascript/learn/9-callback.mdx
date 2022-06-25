@@ -1,0 +1,80 @@
+---
+title: Javascript Callback
+date: '2021-07-20'
+tags: ['Javascript']
+draft: false
+summary: 'This is the introduction to understanding javascript callbacks'
+layout: PostSimple
+---
+
+# Callback
+
+A callback function is a function that is passed as an argument to another function
+
+This allows a function to call another function
+
+> > In Javascript functions are executed in the same sequence they are called not in the sequence they are declared.
+
+### Example function sequence
+
+Example 1 (calling functions separately)
+
+```JS
+
+function showResults(result){
+	console.log("this is result", result)
+}
+
+function calculator(a, b){
+	return a * b
+}
+
+
+
+let result = calculator(5,4)
+
+showResults(result)
+```
+
+Problem with this is we have to make seperate function calls
+
+Example 2 (one function calls another)
+
+```JS
+
+function showResults(result){
+	console.log("this is result", result)
+}
+
+function calculator(a, b){
+	showResults( a * b)
+
+}
+ calculator(5,4)
+
+```
+
+Problem with this is that we now everytime display function is called.
+
+NOW here comes callback
+
+Callback Example
+
+```JS
+
+function showResults(result){
+	console.log("this is result", result)
+}
+
+function calculator(a, b, callback){
+	callback( a * b)
+
+}
+
+
+
+ calculator(5,4, showResults)
+
+```
+
+Where callbacks really shine are in asynchronous functions, where one function has to wait for another function (like waiting for a file to load).
