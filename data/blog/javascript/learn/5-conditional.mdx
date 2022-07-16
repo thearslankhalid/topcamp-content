@@ -13,7 +13,7 @@ Conditionals control behavior in code or in this case in our JavaScript code, an
 
 In simple terms its like a terms and condition document of an organization. You can take it as a rule, if that rule is followed then you can work otherwise you have to leave.
 
-## There are two sets of conditionals for now If..else of switch
+## There are two sets of conditionals for now If..else or switch
 
 ## If..else
 
@@ -64,17 +64,17 @@ else{
 
 ```
 
-the if statment evaluates a condition in the parenthesis and if the results are true it would execute that block of code.
+the if statement evaluates a condition in the parenthesis and if the results are true it would execute that block of code.
 
 ### Boolean conversion
 
-the if satement evaluates the expression in its parenthsesis and converts the reult in boolean.
+The if statement evaluates the expression in its parenthesis and converts the result in boolean.
 
 so a number 0, an empty string “”, null, undefined, NaN and false all become false.
 
 others become true
 
-The `if` statement may contain an optional “else” block. It executes when the condition is falsy.
+The `if` statement may contain an optional `else` block. It executes when the condition is false.
 
 ```JS
 if(year == 2022){
@@ -85,13 +85,13 @@ console.log("this is not our year")
 
 ```
 
-Conditional Operators ‘?’
+Conditional Operators '?'
 
 Sometimes, we need to assign a variable depending on a condition.
 
-WE use ? oeprator
+WE use ? operator
 
-it lets us perform the action in shorter and simplar way.
+It lets us perform the action in shorter and simpler way.
 
 It is also called ternary operator.
 
@@ -100,21 +100,22 @@ let value = condition ? value_one : value_two
 
 ```
 
-The condition is evaluated: if it’s truthy then value_one is returned, otherwise – value_two.
+The condition is evaluated: if it's truth then value_one is returned, otherwise - value_two.
 
 ```JS
 let access_allowed = age > 18 ? "Yes" : "False"
 
 ```
 
-A sequence of ‘?’ opertator could be added to the statment.
+A sequence of '?' operator could be added to the statement.
 
 ```JS
 
-let age = propmt("age",18);
+let age = 101
 
-let message = age > 3 "Hey! Baby" : age < 18 ? "Hello" : age < 100 ? "Greeting" : "What an unsual age";
-alert(message)
+let message = age < 10 ? "Hey! child" : age < 18 ? "Hello Teenager" : age > 100 ? "Hello Old man" : "What an unsual age";
+console.log(message)
+
 ```
 
 ## switch
@@ -262,10 +263,10 @@ There are 4 logical operators in JS
 or Logical possiblities
 
 ```JS
-alert( true || true );   // true
-alert( false || true );  // true
-alert( true || false );  // true
-alert( false || false ); // false
+console.log( true || true );   // true
+console.log( false || true );  // true
+console.log( true || false );  // true
+console.log( false || false ); // false
 
 ```
 
@@ -275,7 +276,7 @@ If an operand is not a boolean, it’s converted to a boolean for the evaluation
 
 ```JS
 if (1 || 0) { // works just like if( true || false )
-  alert( 'truthy!' );
+  console.log( 'truthy!' );
 }
 
 ```
@@ -300,10 +301,10 @@ result = a && b;
 In classical programming, AND returns true if both operands are truthy and false otherwise:
 
 ```JS
-  alert( true && true );   // true
-alert( false && true );  // false
-alert( true && false );  // false
-alert( false && false ); // false
+  console.log( true && true );   // true
+console.log( false && true );  // false
+console.log( true && false );  // false
+console.log( false && false ); // false
 ```
 
 ```JS
@@ -311,7 +312,7 @@ let hour = 12;
 let minute = 30;
 
 if (hour == 12 && minute == 30) {
-  alert( 'The time is 12:30' );
+  console.log( 'The time is 12:30' );
 }
 ```
 
@@ -361,7 +362,7 @@ The common use case for `??` is to provide a default value.
 ```JS
   let user;
 
-alert(user ?? "Anonymous"); // Anonymous (user not defined)
+console.log(user ?? "Anonymous"); // Anonymous (user not defined)
 ```
 
 - `||` returns the first *truthy* value.
